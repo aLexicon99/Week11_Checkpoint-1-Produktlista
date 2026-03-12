@@ -1,7 +1,4 @@
-﻿//using System.Globalization;
-//Console.Clear();
-
-/*
+﻿/*
 # Produktlista
 
 ## Intro
@@ -30,26 +27,26 @@ string question = "Ange produkt: ";
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//Console.WriteLine("------- NIVÅ 1 -------\n\n");
+Console.WriteLine("------- NIVÅ 1 -------\n\n");
 
-//Console.WriteLine(mainMessage);
-//string[] allproducts1 = new string[10];
-//int index1 = 0;
+Console.WriteLine(mainMessage);
+string[] allproducts1 = new string[10];
+int index1 = 0;
 
 
-//while (true)
-//{
-//    string input = Console.ReadLine();
-//    if (input == "exit")
-//    {
-//        break;
-//    }
-//    allproducts1[index1] = input;
-//    index1++;
-//}
+while (true)
+{
+    string input = Console.ReadLine();
+    if (input == "exit")
+    {
+        break;
+    }
+    allproducts1[index1] = input;
+    index1++;
+}
 
-//Array.Resize(ref allproducts1, index1);
-//PrintProductsList(allproducts1, ":\n");
+Array.Resize(ref allproducts1, index1);
+PrintProductsList(allproducts1, ":\n");
 
 
 
@@ -72,32 +69,32 @@ roll. Inledande eller avslutande mellanslag ska också accepteras.
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Console.WriteLine("\n\n------- NIVÅ 2 -------\n\n");
+Console.WriteLine("\n\n------- NIVÅ 2 -------\n\n");
 
-//Console.WriteLine(mainMessage);
-//string[] allproducts2 = new string[10];
-//int index2 = 0;
+Console.WriteLine(mainMessage);
+string[] allproducts2 = new string[10];
+int index2 = 0;
 
 
-//while (true)
-//{
-//    Console.Write(question);
-//    string input = Console.ReadLine();
-//    if (input.ToLower().Trim() == "exit")
-//    {
-//        break;
-//    }
+while (true)
+{
+    Console.Write(question);
+    string input = Console.ReadLine();
+    if (input.ToLower().Trim() == "exit")
+    {
+        break;
+    }
 
-//    allproducts2[index2] = input;
-//    index2++;
-//}
+    allproducts2[index2] = input;
+    index2++;
+}
 
-//Array.Resize(ref allproducts2, index2);
+Array.Resize(ref allproducts2, index2);
 
-//var sortedProducts2 = new string[allproducts2.Length];
-//allproducts2.CopyTo(sortedProducts2, 0);
-//sortedProducts2.Sort();
-//PrintProductsList(sortedProducts2, " (sorterade):\n");
+var sortedProducts2 = new string[allproducts2.Length];
+allproducts2.CopyTo(sortedProducts2, 0);
+sortedProducts2.Sort();
+PrintProductsList(sortedProducts2, " (sorterade):\n");
 
 
 
@@ -141,7 +138,6 @@ while (true)
 
     if (input.ToLower().Trim() == "exit")
     {
-        ShowMessage("debug", "EXIT!");
         break;
     }
 
@@ -164,16 +160,10 @@ while (true)
         else if (!validNumberPart){
             ShowMessage("error", "Felaktigt format på högra delen av produktnumret");
         }
-
         else{
-            //Console.WriteLine("\nPART 0 : '"+ stringPart + "' (STRING?) : " + validStringPart);
-            //Console.WriteLine("PART 1 : '" + numberPart + "' (NUMBERS?) : " + validNumberPart);
-
-            // Valid inputs
+            // Valid inputs, continue...
             if (validStringPart && validNumberPart)
             {
-                ShowMessage("debug", "OK - Added, Continue....");
-
                 int lowNumber = 200;
                 int highNumber = 500;
 
@@ -188,6 +178,10 @@ while (true)
             }
         }
     }
+    else
+    {
+        ShowMessage("error", "Felaktigt format, försök igen...");
+    }
 }
 
 Array.Resize(ref allproducts3, index3);
@@ -197,13 +191,9 @@ allproducts3.CopyTo(sortedProducts3, 0);
 sortedProducts3.Sort();
 PrintProductsList(sortedProducts3, " (sorterade):\n");
 
-
-
-
-
-
-
 Console.ReadKey();
+
+
 
 void PrintProductsList(string[] products, string message)
 {
@@ -212,6 +202,7 @@ void PrintProductsList(string[] products, string message)
     {
         Console.WriteLine($"* {product}");
     }
+    Console.WriteLine("\nPress any key to continue . . .");
 }
 
 void ShowMessage(string messageType, string text)
@@ -220,7 +211,7 @@ void ShowMessage(string messageType, string text)
     {
         switch (messageType)
         {
-            case "error" :
+            case "error":
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(text);
                 Console.ResetColor();
