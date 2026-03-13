@@ -84,9 +84,11 @@ while (true)
     {
         break;
     }
-
-    allproducts2[index2] = input;
-    index2++;
+    if(input.Trim().Length > 1) 
+    {
+        allproducts2[index2] = input;
+        index2++;
+    }
 }
 
 Array.Resize(ref allproducts2, index2);
@@ -171,16 +173,11 @@ while (true)
                     allproducts3[index3] = input;
                     index3++;
                 }
-
                 else{
                     ShowMessage("error", $"Den numeriska delen måste vara mellan {lowNumber} och {highNumber}");
                 }
             }
         }
-    }
-    else
-    {
-        ShowMessage("error", "Felaktigt format, försök igen...");
     }
 }
 
@@ -191,6 +188,10 @@ allproducts3.CopyTo(sortedProducts3, 0);
 sortedProducts3.Sort();
 PrintProductsList(sortedProducts3, " (sorterade):\n");
 
+
+
+
+Console.WriteLine("\nPress any key to continue . . .");
 Console.ReadKey();
 
 
@@ -202,7 +203,6 @@ void PrintProductsList(string[] products, string message)
     {
         Console.WriteLine($"* {product}");
     }
-    Console.WriteLine("\nPress any key to continue . . .");
 }
 
 void ShowMessage(string messageType, string text)

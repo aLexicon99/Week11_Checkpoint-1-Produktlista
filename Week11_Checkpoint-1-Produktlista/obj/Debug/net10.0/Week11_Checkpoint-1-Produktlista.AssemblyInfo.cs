@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Week11_Checkpoint-1-Produktlista")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f3c7e31df1a997ef869243dcb638f10c51a802c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d0e54f26aac785d2bad9a7b053ae9592060856f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Week11_Checkpoint-1-Produktlista")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Week11_Checkpoint-1-Produktlista")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
